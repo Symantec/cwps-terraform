@@ -1,0 +1,12 @@
+# -----------------------------------------------------------------------------
+# S3 Backend
+# -----------------------------------------------------------------------------
+
+terraform {
+  backend "s3" {
+    bucket  = "{{StatefileBucket}}"
+    key     = "terraform/symantec-cwp/iam/terraform.state"
+    encrypt = "true"
+    region  = "${var.aws_region}"
+  }
+}
